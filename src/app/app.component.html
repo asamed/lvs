@@ -1,28 +1,10 @@
-<mat-toolbar color="primary">
-  <span> LVS </span>
-  <span class="example-fill-remaining-space"></span>  
-  </mat-toolbar>
-
-<mat-tab-group animationDuration="0ms">
-  <mat-tab label="First">
-    <mat-tab-group>
-      <mat-tab label="First"> Content 1 </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-      <mat-tab label="Third"> Content 3 </mat-tab>
-    </mat-tab-group>
-  </mat-tab>
-  <mat-tab label="Second">
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="First"> Content 1 </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-      <mat-tab label="Third"> Content 3 </mat-tab>
-    </mat-tab-group>
-  </mat-tab>
-  <mat-tab label="Third">
-    <mat-tab-group animationDuration="0ms">
-      <mat-tab label="First"> Content 1 </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-      <mat-tab label="Third"> Content 3 </mat-tab>
-    </mat-tab-group>
-  </mat-tab>
-</mat-tab-group>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+  *ngFor="let link of navLinks"
+  [routerLink]="link.link"
+  routerLinkActive #rla="routerLinkActive"
+  [active]="rla.isActive">
+  
+  </a>
+  </nav>
+  <router-outlet></router-outlet>
